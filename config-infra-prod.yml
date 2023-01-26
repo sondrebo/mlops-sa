@@ -6,16 +6,16 @@ variables:
   # Global
   ap_vm_image: ubuntu-20.04
 
-  namespace: mlopsv2 #Note: A namespace with many characters will cause storage account creation to fail due to storage account names having a limit of 24 characters.
-  postfix: 0001
-  location: eastus
+  namespace: mlops #Note: A namespace with many characters will cause storage account creation to fail due to storage account names having a limit of 24 characters.
+  postfix: 3
+  location: westeurope
   environment: prod
   enable_aml_computecluster: true
-  enable_monitoring: false
+  enable_monitoring: true
 
   # Azure DevOps
-  ado_service_connection_rg: Azure-ARM-Prod
-  ado_service_connection_aml_ws: Azure-ARM-Prod
+  ado_service_connection_rg: azure-arm-mlops
+  ado_service_connection_aml_ws: azure-arm-mlops
 
   # DO NOT TOUCH
 
