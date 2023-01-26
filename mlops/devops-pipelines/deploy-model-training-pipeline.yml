@@ -5,9 +5,9 @@ variables:
   - ${{ if eq(variables['Build.SourceBranchName'], 'main') }}:
       # 'main' branch: PRD environment
       - template: ../../config-infra-prod.yml
-  - ${{ if ne(variables['Build.SourceBranchName'], 'main') }}:
-      # 'develop' or feature branches: DEV environment
-      - template: ../../config-infra-dev.yml
+ # - ${{ if ne(variables['Build.SourceBranchName'], 'main') }}:
+ #     # 'develop' or feature branches: DEV environment
+ #     - template: ../../config-infra-dev.yml
   - name: version
     value: aml-cli-v2
 
@@ -20,9 +20,8 @@ pool:
 resources:
   repositories:
     - repository: mlops-templates # Template Repo
-      name: Azure/mlops-templates # need to change org name from "Azure" to your own org
-      endpoint: github-connection # need to set up and hardcode
-      type: github
+      name: mlops-templates # need to change org name from "Azure" to your own org
+      type: git
       ref: main
 
 stages:
